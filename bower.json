@@ -1,0 +1,21 @@
+{
+  "name": "map",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "es6-promise": "^3.2.2",
+    "bootstrap": "^3.3.6",
+    "fetch": "^1.0.0",
+    "jquery-auto-complete": "^1.0.7"
+  }
+}

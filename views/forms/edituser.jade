@@ -1,0 +1,43 @@
+div(class="modal fade" id="edituser-dialog" tabindex="-1" role="dialog")
+  div(class="modal-dialog modal-sm" role="document")
+    div(class="modal-content")
+      div(class="modal-header")
+        button(type="button" class="close" data-dismiss="modal" aria-label="Close") <span aria-hidden="true">&times;</span>
+        h4(class="modal-title").
+          Редактирование пользователя
+      div(class="modal-body")
+        form(id='edituser-form')
+          input(name="id" type="hidden")
+          div(class="form-group")
+            label(for="login" class="control-label")
+              Логин:
+            input(name="login" class="form-control" autofocus)
+          div(class="form-group")
+            label(for="name" class="control-label").
+              Имя:
+            input(name="name" class="form-control")
+          div(class="form-group")
+            label(for="pass" class="control-label").
+              Пароль:
+            input(name="pass" type="password" class="form-control")
+          div(class="form-group")
+            label(for="pass_confirm" class="control-label").
+              Подтверждение пароля:
+            input(name="pass_confirm" type="password" class="form-control")
+          div(class="form-group")
+            div(class="checkbox")
+              label(class="checkbox")
+                input(type="checkbox" id="userRoleAdmin" name="userRole" value="admin")
+                | Администрование
+            div(class="checkbox")
+              label(class="checkbox")
+                input(type="checkbox" id="userRoleEditor" name="userRole" value="editor")
+                | Редактирование
+            div(class="checkbox")
+              label(class="checkbox")
+                input(type="checkbox" id="userRoleViewer" name="userRole" value="viewer")
+                | Просмотр
+          div(class="error alert alert-danger hide")
+          div(class='text-right')
+            button(type="submit" class="btn btn-primary" id='edituser-submit-button').
+              Сохранить

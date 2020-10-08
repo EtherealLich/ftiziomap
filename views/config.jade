@@ -1,0 +1,14 @@
+if (map)
+    script(type='text/javascript').
+      var view_options = {
+        lat: #{map.lat},
+        lng: #{map.lng},
+        zoom: #{map.zoom}
+      }
+script(type='text/javascript').
+    var views = {
+        basic: 'Отдельные точки',
+        cluster: 'Кластерный',
+        heatmap: 'Тепловая карта'
+    };
+    var gis_key = 'rutnpt3272'

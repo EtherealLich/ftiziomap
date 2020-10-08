@@ -1,0 +1,22 @@
+div(class="modal fade" id="points-report-dialog" tabindex="-1" role="dialog")
+  div(class="modal-dialog modal-lg" role="document")
+    div(class="modal-content")
+      div(class="modal-header")
+        button(type="button" class="close" data-dismiss="modal" aria-label="Close") <span aria-hidden="true">&times;</span>
+        h4(class="modal-title").
+          Список видимых очагов
+      div(class="modal-body")
+        div(id='points-report-table-div')
+          table(id='points-report-table' class="table table-striped")
+            thead
+              tr
+                th ФИО
+                th Адрес
+                th Комментарий
+                th Форма
+            tbody
+        div(class="help-block")
+        div(class='text-right control-group')
+          a(type="button" class="btn btn-primary" id='points-report-export-button' target="_blank") Экспорт в Excel
+          !{' '}
+          button(type="button" class="btn btn-primary" id='points-report-close-button') Закрыть

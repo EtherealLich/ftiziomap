@@ -1,0 +1,37 @@
+div(class="modal fade" id="editpoint-dialog" tabindex="-1" role="dialog")
+  div(class="modal-dialog modal-sm" role="document")
+    div(class="modal-content")
+      div(class="modal-header")
+        button(type="button" class="close" data-dismiss="modal" aria-label="Close") <span aria-hidden="true">&times;</span>
+        h4(class="modal-title").
+          Редактирование очага
+      div(class="modal-body")
+        form(id='editpoint-form')
+          input(name="point_id" type="hidden")
+          div(class="form-group")
+            label(for="address" class="control-label" data-toggle="tooltip" title="Редактирование этого поля не меняет позицию на карте")
+              i(class="glyphicon glyphicon-info-sign").
+              |&nbsp;Адрес:
+            input(name="address" class="form-control" autofocus)
+          div(class="form-group")
+            label(for="district_id" class="control-label").
+              Район:
+            select(name="district_id" class="form-control")
+              each val in districts
+                option(value=val.id) #{val.name}
+          div(class="form-group")
+            label(for="fio" class="control-label").
+              ФИО:
+            input(name="fio" class="form-control")
+          div(class="form-group")
+            label(for="comment" class="control-label").
+              Комментарий:
+            textarea(name="comment" class="form-control")
+          div(class="form-group")
+            label(for="tubform" class="control-label").
+              Форма туберкулеза:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            input(type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="primary" data-on="БК+" data-off="БК-" class="form-control" name="tubform" data-width="80" data-size="large")
+          div(class="error alert alert-danger hide")
+          div(class='text-right')
+            button(type="submit" class="btn btn-primary" id='editpoint-submit-button').
+              Сохранить

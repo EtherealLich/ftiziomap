@@ -1,0 +1,19 @@
+div(class="modal-dialog modal-sm" role="document" id="auth-form")
+  div(class="modal-content")
+    div(class="modal-header")
+      h4(class="modal-title").
+        Войти в систему
+    div(class="modal-body")
+      form(id='login-form')
+        div(class="form-group")
+          label(for="login" class="control-label").
+            Логин:
+          input(name="login" class="form-control" autofocus)
+        div(class="form-group")
+          label(for="pass" class="control-label").
+            Пароль:
+          input(name="pass" type="password" class="form-control")
+        div(class="error alert alert-danger hide")
+        div(class='text-right')
+          button(type="submit" class="btn btn-primary" id='login-submit-button').
+            Войти

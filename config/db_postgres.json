@@ -1,0 +1,9 @@
+{
+    "host": "ec2-54-235-255-27.compute-1.amazonaws.com",
+    "port": "5432",
+    "database": "",
+    "user": "",
+    "password": "",
+    "dialect": "postgres",
+    "protocol": "postgres"
+}

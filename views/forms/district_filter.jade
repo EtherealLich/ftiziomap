@@ -1,0 +1,23 @@
+div(class="modal fade" id="district-filter-dialog" tabindex="-1" role="dialog")
+  div(class="modal-dialog modal-sm" role="document")
+    div(class="modal-content")
+      div(class="modal-header")
+        button(type="button" class="close" data-dismiss="modal" aria-label="Close") <span aria-hidden="true">&times;</span>
+        h4(class="modal-title").
+          Фильтр по районам
+      div(class="modal-body")
+        form(id='district-filter-form')
+          div(class="form-group")
+            each val in districts
+              div(class="checkbox")
+                label(class="checkbox")
+                  if !filter || ( filter && filter.districts && filter.districts.indexOf(val.id.toString()) != -1 )
+                    input(type="checkbox" name="districts" value="#{val.id}" checked)
+                  else
+                    input(type="checkbox" name="districts" value="#{val.id}")
+                  !{val.name}
+          div(class="error alert alert-danger hide")
+          div(class='text-right')
+            button(type="button" class="btn btn-primary" id='district-filter-reset-button') Сбросить фильтры
+            !{' '}
+            button(type="submit" class="btn btn-primary" id='district-filter-submit-button') Применить

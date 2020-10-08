@@ -1,0 +1,55 @@
+.leaflet-cluster-anim .leaflet-marker-icon, .leaflet-cluster-anim .leaflet-marker-shadow {
+	-webkit-transition: -webkit-transform 0.3s ease-out, opacity 0.3s ease-in;
+	-moz-transition: -moz-transform 0.3s ease-out, opacity 0.3s ease-in;
+	-o-transition: -o-transform 0.3s ease-out, opacity 0.3s ease-in;
+	transition: transform 0.3s ease-out, opacity 0.3s ease-in;
+}
+
+.leaflet-cluster-spider-leg {
+	/* stroke-dashoffset (duration and function) should match with leaflet-marker-icon transform in order to track it exactly */
+	-webkit-transition: -webkit-stroke-dashoffset 0.3s ease-out, -webkit-stroke-opacity 0.3s ease-in;
+	-moz-transition: -moz-stroke-dashoffset 0.3s ease-out, -moz-stroke-opacity 0.3s ease-in;
+	-o-transition: -o-stroke-dashoffset 0.3s ease-out, -o-stroke-opacity 0.3s ease-in;
+	transition: stroke-dashoffset 0.3s ease-out, stroke-opacity 0.3s ease-in;
+}
+
+
+.marker-cluster-small {
+	background-color: rgba(169, 0, 0, 0.6);
+	}
+.marker-cluster-small div {
+	background-color: rgba(169, 0, 0, 0.6);
+	}
+
+.marker-cluster-medium {
+	background-color: rgba(169, 0, 0, 0.6);
+	}
+.marker-cluster-medium div {
+	background-color: rgba(169, 0, 0, 0.6);
+	}
+
+.marker-cluster-large {
+	background-color: rgba(169, 0, 0, 0.6);
+	}
+.marker-cluster-large div {
+	background-color: rgba(169, 0, 0, 0.6);
+	}
+
+.marker-cluster {
+	background-clip: padding-box;
+	border-radius: 20px;
+	}
+.marker-cluster div {
+	width: 60px;
+	height: 60px;
+	margin-left: -10px;
+	margin-top: -10px;
+
+	text-align: center;
+	border-radius: 30px;
+	font: 16px "Helvetica Neue", Arial, Helvetica, sans-serif;
+	color: white;
+	}
+.marker-cluster span {
+	line-height: 60px;
+	}

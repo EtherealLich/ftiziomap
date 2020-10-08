@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  script(type='text/javascript', src='https://maps.api.2gis.ru/2.0/loader.js?pkg=basic&skin=light')
+  link(rel='stylesheet', href='/stylesheets/MarkerCluster.css')
+  script(type='text/javascript', src='/fetch/fetch.js')
+  script(type='text/javascript', src='/javascripts/user.js')
+  div(class="container")
+    div(class="navbar-header")
+      div(class="form-group")
+        input(type="text" name="address_search" class="form-control fixed-width-200" id="address_search" placeholder="Поиск по адресу" data-autocomplete="example.php")
+      form(class="navbar-form navbar-right")
+        button(type="button" class="btn btn-default" id="districts-filter-button" ) Фильтры
+        if JSON.parse(user).roles.indexOf('admin') != -1
+          a(href="/users")
+            button(type="button" class="btn btn-default" id="users-button" ) Пользователи
+        button(type="button" class="btn btn-default" id="points-report-button" ) Список видимых очагов
+        div(class="dropdown" id="view-menu")
+          button(class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true") #{views[view]} <span class="caret"/>
+          ul(class="dropdown-menu" aria-labelledby="dropdownMenu1")
+            each val, index in views
+              li()
+                a(href='/map/view/#{index}' class="padding-left-10")
+                  if index == view
+                    i(class="glyphicon glyphicon-ok padding-right-10")
+                  else
+                    i(class="glyphicon glyphicon-none padding-right-10")
+                  =val
+        button(type="button" class="btn btn-default logout-button-fixed" id="logout-button") Выйти
+
+  div(id='map')
+  include ./forms/addpoint.jade
+  include ./forms/editpoint.jade
+  include ./forms/district_filter.jade
+  include ./forms/points_report.jade
+  include ./config.jade
+  script(type='text/javascript', src='/javascripts/map.js')
+  script(type='text/javascript').
+    var user = new User(!{user}),
+        map = new Map('!{view}', view_options);
+    $(function () {
+      $("[data-toggle='tooltip']").tooltip();
+    });
